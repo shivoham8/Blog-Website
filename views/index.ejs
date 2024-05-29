@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+
+<div id="content">
+  <div id="home-section">
+    <h1>All Blog Posts</h1>
+    <div id="posts">
+      <% if(locals.posts.length === 0) { %>
+        <p>No posts available. Create one <a href="/create"> here</a></p>
+      <% } else { %>
+        <% posts.forEach(post => { %>
+            <div class="post">
+                <h2><%= post.title %></h2>
+                <p><%= post.content %></p>
+            </div>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
